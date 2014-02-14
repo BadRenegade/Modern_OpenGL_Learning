@@ -1,4 +1,3 @@
-
 vector<GLuint> shaderList;
 const string vertexShader(
 	"#version 330\n"
@@ -16,7 +15,7 @@ GLuint CreateProgram(vector<GLuint>& shaderList);
 void init()
 {
 	GLuint shader = CreateShader(GL_VERTEX_SHADER, vertexShader);
-	
+
 	shaderList.push_back(shader);
 
 	Gluint program = CreateProgram(shaderList);
@@ -35,7 +34,7 @@ GLuint CreateShader(GLenum shaderType, const string& shaderFile)
 	glShaderSource(shader, 1, &shaderFileData, NULL);
 	glCompileShader(shader);
 
-	
+
 	GLint status;
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
 
